@@ -20,6 +20,7 @@ main {
   width: 100%;
   height: 80%;
 }
+
 .container {
   width: 40vw;
   height: 50vh;
@@ -35,5 +36,28 @@ main {
   justify-content: center;
   align-items: center;
   font-size: 40px;
+  cursor: pointer;
+}
+.hidden {
+  display: none;
+}
+aside {
+  border: white solid 5px;
+  width: 40vw;
+  height: 50vh;
+  display: flex;
+  flex-wrap: wrap;
+  padding: 50px;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
+
+button {
+  width: 50%;
+  height: 20%;
+  background-color: white;
+  color: black;
+  border-radius: 10px;
   cursor: pointer;
 }

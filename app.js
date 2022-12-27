@@ -1,5 +1,8 @@
 console.log("Hello World");
 const container = document.querySelector(".container");
+const result = document.querySelector("aside h2");
+const showResult = document.querySelector("aside");
+const reset = document.querySelector("button");
 let gameBoard = [];
 let xHolder = [];
 let oHolder = [];
@@ -66,6 +69,9 @@ const winner = () => {
       gameBoard[8].classList.contains("X"))
   ) {
     console.log("X WINS");
+    container.classList.add("hidden");
+    showResult.classList.remove("hidden");
+    result.innerHTML = "<h2>X WINS</h2>";
   } else if (
     (gameBoard[0].classList.contains("O") &&
       gameBoard[1].classList.contains("O") &&
@@ -93,6 +99,9 @@ const winner = () => {
       gameBoard[8].classList.contains("O"))
   ) {
     console.log("O WINS");
+    container.classList.add("hidden");
+    showResult.classList.remove("hidden");
+    result.innerHTML = "<h2>O WINS</h2>";
   } else if (
     gameBoard[0].classList.contains("active") &&
     gameBoard[1].classList.contains("active") &&
@@ -104,6 +113,24 @@ const winner = () => {
     gameBoard[8].classList.contains("active")
   ) {
     console.log("DRAW");
+    container.classList.add("hidden");
+    showResult.classList.remove("hidden");
+    result.innerHTML = "<h2>Draw</h2>";
   }
 };
+reset.addEventListener("click", () => {
+  xHolder.splice(0, xHolder.length);
+  oHolder.splice(0, oHolder.length);
+  j = 0;
+  k = 0;
+  showResult.classList.add("hidden");
+  container.classList.remove("hidden");
+  for (i = 0; i < gameBoard.length; i++) {
+    gameBoard[i].innerHTML = "";
+    gameBoard[i].classList.add("empty");
+    gameBoard[i].classList.remove("O");
+    gameBoard[i].classList.remove("X");
+    gameBoard[i].classList.remove("active");
+  }
+});
 renderGameBoard();
