@@ -1,0 +1,38 @@
+* {
+  box-sizing: border-box;
+  margin: 0%;
+  padding: 0%;
+  color: white;
+}
+body {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+}
+h1 {
+  font-size: 60px;
+  text-align: center;
+}
+main {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 80%;
+}
+.container {
+  width: 40vw;
+  height: 50vh;
+  border: white 1px solid;
+  display: flex;
+  flex-wrap: wrap;
+}
+.square {
+  width: 33.33333333%;
+  height: 33.3333333%;
+  border: white 5px solid;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 40px;
+}
