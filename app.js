@@ -3,6 +3,10 @@ const container = document.querySelector(".container");
 const result = document.querySelector("aside h2");
 const showResult = document.querySelector("aside");
 const reset = document.querySelector("button");
+const playerOneScore = document.querySelector(".player1-score");
+const playerTwoScore = document.querySelector(".player2-score");
+let scoreOne = 0;
+let scoreTwo = 0;
 let gameBoard = [];
 let xHolder = [];
 let oHolder = [];
@@ -69,8 +73,10 @@ const winner = () => {
       gameBoard[8].classList.contains("X"))
   ) {
     console.log("X WINS");
+    scoreOne += 1;
     container.classList.add("hidden");
     showResult.classList.remove("hidden");
+    playerOneScore.innerHTML = `${scoreOne}`;
     result.innerHTML = "<h2>X WINS</h2>";
   } else if (
     (gameBoard[0].classList.contains("O") &&
@@ -99,8 +105,10 @@ const winner = () => {
       gameBoard[8].classList.contains("O"))
   ) {
     console.log("O WINS");
+    scoreTwo += 1;
     container.classList.add("hidden");
     showResult.classList.remove("hidden");
+    playerTwoScore.innerHTML = `${scoreTwo}`;
     result.innerHTML = "<h2>O WINS</h2>";
   } else if (
     gameBoard[0].classList.contains("active") &&
